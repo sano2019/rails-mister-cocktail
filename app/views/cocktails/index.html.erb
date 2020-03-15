@@ -1,12 +1,18 @@
 <h1>Cocktails</h1>
-
-<ul class="list-group">
-    <% @cocktails.each do |cocktail| %>
-      <li class="list-group-item">
-        <%= link_to cocktail.name , cocktail_path(cocktail)  %>
-      </li>
-    <% end %>
-</ul>
-
-
 <%= link_to "Create new Cocktail", new_cocktail_path  %>
+<div class="card-deck">
+    <% @cocktails.each do |cocktail| %>
+    <div class="card">
+        <%= cl_image_tag cocktail.image.key, height: 200, crop: :scale, class: "card-img-top" %>
+        <div class="card-body">
+            <%= link_to cocktail.name , cocktail_path(cocktail), class: "card-title"  %>
+        </div>
+    </div>
+    <% end %>
+</div>
+<!-- <div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div> -->

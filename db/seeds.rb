@@ -21,6 +21,27 @@ ingredient = Ingredient.new(
 ingredient.save!
 end
 
+# **** For this, there are particular keys that have NULL such as 38, how do I deal with that?
+# index = 1
+# until index == 602
+#   url = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?iid=#{index}"
+#   ingredient_serialized = open(url).read
+#   parsed_ingredient = JSON.parse(ingredient_serialized)
+#   array_of_ingredients = parsed_ingredient['ingredients']
+
+#   array_of_ingredients.each do |ingredient_hash|
+#     ingredient = Ingredient.new(
+#       name: ingredient_hash['strIngredient']
+#       )
+#     index += 1
+#     ingredient.save!
+
+#   end
+
+# end
+
+
+
 # 1. Require 'open-uri'
 # 2. Store the url in a variable
 # 3. Use open(url).read to make an http request to the url
